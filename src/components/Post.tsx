@@ -1,14 +1,25 @@
 import React from 'react';
 import './Post.css';
+import Avatar from '@material-ui/core/Avatar';
+import IPost from '../models/Post.interface';
 
-function Post() {
+
+function Post(props: Partial<IPost>) {
+    const { username, caption, imageUrl, imageAvatar } = props;
     return (
         <div className="post">
-            <h3>Username</h3>
+            <div className="post__header">
+                <Avatar
+                    className="post__avatar"
+                    alt={username}
+                    src={imageAvatar}
+                />
+                <h3>{username}</h3>
+            </div>
             {/* Header -> Avatar -> Username */}
-            <img className="post__image" src="https://picsum.photos/1000" />
+            <img className="post__image" src={imageUrl} />
             {/* Image */}
-            <h4 className="post__text"><strong>front.endevelopment</strong> This tutorial explains about the opacity property in CSS. It is used widely to create cool hover effects. Feel free to ask us any doubts. Turn on post notifications for instant updates. Share @front.endevelopment with your friends.</h4>
+            <h4 className="post__text"><strong>{username}</strong> {caption}</h4>
             {/* Username + Caption */}
         </div>
     )
