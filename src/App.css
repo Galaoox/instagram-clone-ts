@@ -6,10 +6,3 @@
   background-color: #fafafa;
   height: 100vh;
 }
-
-.app__header {
-  object-fit: contain; /* debería redimensionarse para ajustarse a su contenedor. */
-  padding: 20px;
-  border-bottom: 1px solid lightgray;
-  background-color: white;
-}
